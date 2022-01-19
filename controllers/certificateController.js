@@ -72,7 +72,7 @@ const deleteCertificate = async (req, res) => {
     const certificate = await Certificates.destroy({
       where: { id: req.params.id },
     });
-    res.status(200).send(certificate);
+    res.status(200).send('The specified certificate has been deleted.');
   } catch (error) {
     console.error('Error deleting certificate:', error);
     res.status(500).send('Error communicating with the database.');
