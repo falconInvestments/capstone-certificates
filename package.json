@@ -1,7 +1,7 @@
 {
   "name": "capstone-certificates",
   "version": "0.0.1",
-  "description": "",
+  "description": "CRUD microservice for certificates of deposit for the Falcon Investments app",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
