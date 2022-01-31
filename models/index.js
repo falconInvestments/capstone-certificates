@@ -37,7 +37,7 @@ db.Users = require('./userModel')(sequelize, DataTypes);
 db.Certificates = require('./certificateModel')(sequelize, DataTypes);
 
 db.sequelize
-  .sync()
+  .sync({ force: false })
   .then(() => {
     console.log('Successfully synced database with Sequelize.');
   })
