@@ -53,6 +53,7 @@ const updateCertificate = async (req, res) => {
   try {
     const certificate = await Certificates.update(
       {
+        name: req.body.name,
         initialAmount: req.body.initialAmount,
         interestRate: req.body.interestRate,
         startDate: req.body.startDate,
