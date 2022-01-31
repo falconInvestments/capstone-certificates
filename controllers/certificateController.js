@@ -6,6 +6,7 @@ const Certificates = db.Certificates;
 const addCertificate = async (req, res) => {
   try {
     const certificate = await Certificates.create({
+      name: req.body.name,
       initialAmount: req.body.initialAmount,
       interestRate: req.body.interestRate,
       startDate: req.body.startDate,
