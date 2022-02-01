@@ -20,6 +20,19 @@ const addCertificate = async (req, res) => {
   }
 };
 
+// Read (all for one user)
+const filterCertificates = async (req, res) => {
+  try {
+    const certificates = await Certificates.findAll({
+      where: { userId: req.body.userId },
+    });
+    res.status(200).send(certificates);
+  } catch (error) {
+    console.error('Error finding certificates:', error);
+    res.status(500).send('Error communicating with the database.');
+  }
+};
+
 // Read (one)
 const findCertificate = async (req, res) => {
   try {
@@ -83,6 +96,7 @@ const deleteCertificate = async (req, res) => {
 
 module.exports = {
   addCertificate,
+  filterCertificates,
   findCertificate,
   findAllCertificates,
   updateCertificate,
