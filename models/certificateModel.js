@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
     },
     interestRate: {
-      type: DataTypes.DECIMAL(3, 3),
+      type: DataTypes.DECIMAL(5, 4),
     },
     startDate: {
       type: DataTypes.DATEONLY,
