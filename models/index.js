@@ -4,6 +4,7 @@ let sequelize = null;
 if (process && process.env.DATABASE_URL) {
   sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialectOptions: {
+      useUTC: false,
       ssl: {
         require: true,
         rejectUnauthorized: false,
